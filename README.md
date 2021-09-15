@@ -1,10 +1,11 @@
 # git-setup
 for my git setup
 
-• To learn how to upload your codes on GitHub.
-Data: 
-• None 
+To learn how to upload your codes on GitHub.
+
+Data: None 
 Steps:
+
 Register a GitHub account at https://github.com/. You may want to use your email rather than JMU email if you maintain your GitHub after graduation. 
 Create a Repository on GitHub:
 Give your repository a name, like git-setup
