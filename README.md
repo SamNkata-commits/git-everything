@@ -1,31 +1,41 @@
-# git-setup
-for my git setup
+Your first time with git and github
+If you’ve never used git or github before, there are a bunch of things that you need to do. It’s very well explained on github, but repeated here for completeness.
 
-To learn how to upload your codes on GitHub.
+Get a github account.
+Download and install git.
+Set up git with your user name and email.
 
-Data: None 
-Steps:
+Open a terminal/shell and type:
 
-Register a GitHub account at https://github.com/. You may want to use your email rather than JMU email if you maintain your GitHub after graduation. 
-Create a Repository on GitHub:
-Give your repository a name, like git-setup
-Select public repository
-Check initialize the repository with README
-Choose Python in the gitignore
-Choose the MIT license 
-In the GitHub Account Settings/Developer Settings, create a Personal Access Token.
-Create a Cloud9 project in AWS: 
-In the AWS Console, select Cloud9, create an Environment and name it git-setup.
-In cloud9, clone your GitHub Repository by typing the following command in the terminal:
-git clone the_url_of_your_github_repository
-Create a new python file in the downloaded repository, name it lab1.py. Try to print('hello world') in the lab1.py.
-Use cd to go inside the downloaded repository.
-Store the GitHub personal access token to the Cloud9 instance. This method stores the token into a plain text file and is not recommended in production. 
-git config --global credential.helper store   
-Upload the new python file to the GitHub repository by typing the following command in the terminal:
-git add --all
-git commit -m "write something here to explain your edit."
-git push
-Type your GitHub account email
-Type your GitHub personal access token 
-Go to your GitHub repository and check the changes.
+$ git config --global user.name "Your name here"
+$ git config --global user.email "your_email@example.com"
+(Don’t type the $; that just indicates that you’re doing this at the command line.)
+
+I also do:
+
+$ git config --global color.ui true
+$ git config --global core.editor emacs
+The first of these will enable colored output in the terminal; the second tells git that you want to use emacs.
+
+Set up ssh on your computer. I like Roger Peng’s guide to setting up password-less logins. Also see github’s guide to generating SSH keys.
+
+Look to see if you have files ~/.ssh/id_rsa and ~/.ssh/id_rsa.pub.
+If not, create such public/private keys: Open a terminal/shell and type:
+
+$ ssh-keygen -t rsa -C "your_email@example.com"
+Copy your public key (the contents of the newly-created id_rsa.pub file) into your clipboard. On a Mac, in the terminal/shell, type:
+
+$ pbcopy < ~/.ssh/id_rsa.pub
+Paste your ssh public key into your github account settings.
+
+Go to your github Account Settings
+Click “SSH Keys” on the left.
+Click “Add SSH Key” on the right.
+Add a label (like “My laptop”) and paste the public key into the big text box.
+In a terminal/shell, type the following to test it:
+
+$ ssh -T git@github.com
+If it says something like the following, it worked:
+
+Hi username! You've successfully authenticated, but Github does
+not provide shell access.
