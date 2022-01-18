@@ -1,4 +1,4 @@
-For git setup for Github
+Git setup for Github
 
 Your first time with git and github
 If you’ve never used git or github before, there are a bunch of things that you need to do. It’s very well explained on github, but repeated here for completeness.
